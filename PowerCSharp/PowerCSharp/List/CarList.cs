@@ -13,10 +13,16 @@ namespace PowerCSharp
         public string Name { get; set; }
 
 
-        //Car()
-        //{
+        public void ListFilter()
+        {
+            var myCars = new Car().getList();
 
-        //}
+            // 取第一個
+            var NewMyCars = new Car();
+            NewMyCars = myCars.First();
+
+
+        }
 
         public List<Car> getList()
         {
@@ -29,6 +35,11 @@ namespace PowerCSharp
             };
 
             return myCars;
+        }
+
+        public static explicit operator Car(List<Car> v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

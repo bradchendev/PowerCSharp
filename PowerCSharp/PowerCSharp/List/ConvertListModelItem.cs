@@ -4,15 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PowerCSharp.List
+namespace PowerCSharp
 {
-    class ConvertListModelItem
+    static class ConvertListModelItem
     {
-        public void test()
+        public static void test()
         {
             var myCars = new Car().getList();
 
-            List<Car2> all = myCars.ConvertAll(x => x.ConvertTo<Car2>()); 
+            //List<Car2> all = myCars.ConvertAll(x => x.ConvertTo<Car2>());
+            List<Car2> all = new List<Car2>();
+
+            all.AddRange(myCars.Select(dataItem => new Car2() { Id = dataItem.Id, Name = dataItem.Name }));
+
+            foreach (var item in all)
+            {
+                Console.WriteLine(string.Format("Id:{0} Name:{1}",item.Id,item.Name));
+            }
+
         }
     }
 

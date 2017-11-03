@@ -10,12 +10,13 @@ namespace PowerCSharp
     {
         static void Main(string[] args)
         {
-            var myCars = new Car().getList();
+            //var myCars = new Car().getList();
+            //foreach (var item in myCars)
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
 
-            foreach (var item in myCars)
-            {
-                Console.WriteLine(item.Name);
-            }
+            ConvertListModelItem.test();
 
             Console.ReadLine();
         }
