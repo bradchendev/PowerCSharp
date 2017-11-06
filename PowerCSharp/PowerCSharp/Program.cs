@@ -16,7 +16,10 @@ namespace PowerCSharp
             //    Console.WriteLine(item.Name);
             //}
 
-            ConvertListModelItem.test();
+            //ConvertListModelItem.test();
+
+
+            bTime.test();
 
             Console.ReadLine();
         }
