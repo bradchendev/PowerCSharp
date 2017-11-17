@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Web.Administration, Version=7.9.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -45,8 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AD\AD.cs" />
+    <Compile Include="DateTime\DateTimeToString.cs" />
     <Compile Include="DateTime\TimeBetween.cs" />
+    <Compile Include="FileFolder\FileFolder.cs" />
     <Compile Include="ForIteration\ForIteration.cs" />
+    <Compile Include="IIS\ListWebSite.cs" />
+    <Compile Include="IIS\ListWebSite2.cs" />
+    <Compile Include="IIS\WebSite\WebSite.cs" />
     <Compile Include="List\CarList.cs" />
     <Compile Include="List\ConvertListModelItem.cs" />
     <Compile Include="Numeric\Numeric.cs" />
