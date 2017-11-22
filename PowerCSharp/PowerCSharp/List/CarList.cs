@@ -12,7 +12,6 @@ namespace PowerCSharp
 
         public string Name { get; set; }
 
-
         public void ListFilter()
         {
             var myCars = new Car().getList();
@@ -20,7 +19,6 @@ namespace PowerCSharp
             // 取第一個
             var NewMyCars = new Car();
             NewMyCars = myCars.First();
-
 
         }
 
