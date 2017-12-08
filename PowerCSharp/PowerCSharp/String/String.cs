@@ -9,6 +9,31 @@ namespace PowerCSharp.String
 {
     class String
     {
+        public void replaceDoubleQuotes()
+        {
+            string str = "it is a \"text\"";
+            string str_without_quotes = str.Replace("\"", "");
+        }
+
+        public void stringBuilder()
+        {
+            //Using the StringBuilder Class in .NET
+            //https://docs.microsoft.com/en-us/dotnet/standard/base-types/stringbuilder
+            StringBuilder MyStringBuilder = new StringBuilder("Hello World!");
+            MyStringBuilder.Append(" What a beautiful day.");
+            Console.WriteLine(MyStringBuilder);
+        }
+
+        public void stringJoinReplace()
+        {
+
+            List<string> lists = new List<string>() { "aaaa", "bbbb" };
+            Console.WriteLine(string.Join(",", lists));
+            // output is aaaa, bbbb
+
+            Console.WriteLine(string.Format("'{0}'", string.Join("','", lists.Select(i => i.Replace("'", "''")).ToArray())));
+            // output is 'aaaa','bbbb'
+        }
 
         public void splitString()
         {

@@ -52,7 +52,8 @@
     <Compile Include="ClassProperty\ClassProperty.cs" />
     <Compile Include="Database\BulkInsert.cs" />
     <Compile Include="Database\ExecuteSQL.cs" />
-    <Compile Include="DateTime\DateTimeToString.cs" />
+    <Compile Include="DateTime\DatetimeFormat.cs" />
+    <Compile Include="DateTime\DateTimeConvert.cs" />
     <Compile Include="DateTime\TimeBetween.cs" />
     <Compile Include="Enum\MyEnum.cs" />
     <Compile Include="FileFolder\FileFolder.cs" />
@@ -64,13 +65,16 @@
     <Compile Include="List\ConvertListModelItem.cs" />
     <Compile Include="Numeric\Numeric.cs" />
     <Compile Include="OperationSystem\OperationSystem.cs" />
+    <Compile Include="OperationSystem\Windows\Windows.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="String\String.cs" />
+    <Compile Include="UnitTest\UnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
