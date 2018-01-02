@@ -49,6 +49,9 @@ namespace PowerCSharp
             var car2 = myCars.FirstOrDefault(d => d.Id == 2);
 
 
+            // update all items in list
+            myCars.Select(c => { c.Make = "Honda"; return c; }).ToList();
+
         }
 
         public void ListFilter()

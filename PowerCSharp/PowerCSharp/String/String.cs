@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -53,9 +54,21 @@ namespace PowerCSharp.String
             Console.WriteLine(s2.Substring(s2.IndexOf('\\') + 1));
             Console.WriteLine(s2.Substring(0, s2.IndexOf('\\')));
 
+
             string LuaFileFullPath = "E:\\Web\\API\\Solutions\\Solution01\\App_Data\\scripts\\CtrlDbTime.lua";
+
+            // 取得本機Lua檔
+            string text = File.ReadAllText(LuaFileFullPath, Encoding.GetEncoding(950));
+            // 檢查目前設定是否為分流DB
+            var isReplCurrent = text.Contains("dbname = \"TPEREPL2\"");
+
+            LuaFileFullPath = "E:\\Web\\API\\Solutions\\Solution01\\App_Data\\scripts\\CtrlDbTime.lua";
+
             LuaFileFullPath = LuaFileFullPath.Replace("E:\\Web\\API\\Solutions\\", "").Replace("\\App_Data\\scripts\\CtrlDbTime.lua", "");
             Console.WriteLine(LuaFileFullPath);
+
+
+
 
         }
 

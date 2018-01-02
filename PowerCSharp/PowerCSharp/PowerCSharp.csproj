@@ -63,8 +63,10 @@
     <Compile Include="IIS\WebSite\WebSite.cs" />
     <Compile Include="List\CarList.cs" />
     <Compile Include="List\ConvertListModelItem.cs" />
+    <Compile Include="Measurement\Measurement.cs" />
     <Compile Include="Numeric\Numeric.cs" />
     <Compile Include="OperationSystem\OperationSystem.cs" />
+    <Compile Include="OperationSystem\Windows\EventLog.cs" />
     <Compile Include="OperationSystem\Windows\Windows.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
