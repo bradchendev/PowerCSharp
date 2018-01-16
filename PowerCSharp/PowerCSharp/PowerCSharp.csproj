@@ -38,8 +38,10 @@
       <HintPath>C:\Windows\System32\inetsrv\Microsoft.Web.Administration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,7 +58,9 @@
     <Compile Include="DateTime\DateTimeConvert.cs" />
     <Compile Include="DateTime\TimeBetween.cs" />
     <Compile Include="Enum\MyEnum.cs" />
+    <Compile Include="FileFolder\ConfigFile\Read_AppConfig.cs" />
     <Compile Include="FileFolder\FileFolder.cs" />
+    <Compile Include="FileFolder\Log.cs" />
     <Compile Include="ForIteration\ForIteration.cs" />
     <Compile Include="IIS\ListWebSite.cs" />
     <Compile Include="IIS\ListWebSite2.cs" />
@@ -64,6 +68,7 @@
     <Compile Include="List\CarList.cs" />
     <Compile Include="List\ConvertListModelItem.cs" />
     <Compile Include="Measurement\Measurement.cs" />
+    <Compile Include="MessageQueue\MessageQueueSample.cs" />
     <Compile Include="Numeric\Numeric.cs" />
     <Compile Include="OperationSystem\OperationSystem.cs" />
     <Compile Include="OperationSystem\Windows\EventLog.cs" />
@@ -76,7 +81,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="FileFolder\ConfigFile\App.config.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

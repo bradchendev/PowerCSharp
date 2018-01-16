@@ -62,6 +62,16 @@ namespace PowerCSharp.String
             // 檢查目前設定是否為分流DB
             var isReplCurrent = text.Contains("dbname = \"TPEREPL2\"");
 
+            // 用參數傳入
+            //string input = "TPEREPL2";
+            //string find = "dbname = \"" + input + "\"";
+            ////string find = "dbname = \"TPEREPL2\"";
+            //// 檢查目前設定是否為分流DB
+            //var isReplCurrent = text.Contains(find);
+
+
+
+
             LuaFileFullPath = "E:\\Web\\API\\Solutions\\Solution01\\App_Data\\scripts\\CtrlDbTime.lua";
 
             LuaFileFullPath = LuaFileFullPath.Replace("E:\\Web\\API\\Solutions\\", "").Replace("\\App_Data\\scripts\\CtrlDbTime.lua", "");
