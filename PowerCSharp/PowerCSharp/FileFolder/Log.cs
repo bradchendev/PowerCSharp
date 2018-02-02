@@ -17,11 +17,8 @@ namespace PowerCSharp.FileFolder
             // AppDomain.CurrentDomain.BaseDirectory = Website root folder
             // 如果目錄不存在，則自動建立
             Directory.CreateDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log"));
-
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Log", "debug.log");
-
             StringBuilder sb = new StringBuilder();
-
             sb.AppendLine("");
             sb.AppendLine("DateTime:" + DateTime.Now.ToString());
             sb.AppendLine(msg);

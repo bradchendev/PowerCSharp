@@ -8,4 +8,7 @@
     <!--<add key="Title" value="Configuration Example"/>-->
     <!--<add key="Language" value="CSharp"/>-->
   </appSettings>
+    <connectionStrings>
+    <add name="SQLDEV1Connection" connectionString="Data Source=dev1.contoso.com;Initial Catalog=AdventureWorks2008R2;User ID=App1User;Password=XxxxN222N;Connection Timeout=60; Application Name=WebSite1;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
 </configuration>

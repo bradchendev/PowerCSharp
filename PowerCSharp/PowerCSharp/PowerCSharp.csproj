@@ -59,7 +59,12 @@
     <Compile Include="DateTime\TimeBetween.cs" />
     <Compile Include="Enum\MyEnum.cs" />
     <Compile Include="FileFolder\ConfigFile\Read_AppConfig.cs" />
+    <Compile Include="FileFolder\File.cs" />
     <Compile Include="FileFolder\FileFolder.cs" />
+    <Compile Include="FileFolder\FolderList.cs" />
+    <Compile Include="FileFolder\Folder\FolderCopy.cs" />
+    <Compile Include="FileFolder\Folder\FolderCreate.cs" />
+    <Compile Include="FileFolder\Folder\FolderExist.cs" />
     <Compile Include="FileFolder\Log.cs" />
     <Compile Include="ForIteration\ForIteration.cs" />
     <Compile Include="IIS\ListWebSite.cs" />
@@ -73,6 +78,7 @@
     <Compile Include="OperationSystem\OperationSystem.cs" />
     <Compile Include="OperationSystem\Windows\EventLog.cs" />
     <Compile Include="OperationSystem\Windows\Windows.cs" />
+    <Compile Include="OperatorsExpressions\MySwitch.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="String\String.cs" />
