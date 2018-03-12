@@ -53,6 +53,7 @@
     <Compile Include="AD\AD.cs" />
     <Compile Include="ClassProperty\ClassProperty.cs" />
     <Compile Include="Database\BulkInsert.cs" />
+    <Compile Include="Database\DataReader.cs" />
     <Compile Include="Database\ExecuteSQL.cs" />
     <Compile Include="DateTime\DatetimeFormat.cs" />
     <Compile Include="DateTime\DateTimeConvert.cs" />
