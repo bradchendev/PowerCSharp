@@ -53,7 +53,7 @@ namespace PowerCSharp.MessageQueueSample
         // a queue.
         //**************************************************
 
-        public static void Main()
+        public static void Main4()
         {
             // Create a new instance of the class.
             MyNewQueue myNewQueue = new MyNewQueue();

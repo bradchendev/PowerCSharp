@@ -145,7 +145,7 @@ namespace PowerCSharp
     }
     public class Example
     {
-        public static void Main()
+        public static void Main2()
         {
             // Create a list of parts.
             List<Part> parts = new List<Part>();

@@ -10,9 +10,11 @@ namespace PowerCSharp
     {
         public static void test()
         {
+            // 直接指定日期時間
+            var d = Convert.ToDateTime("2018-03-11 15:00:09");
 
+            // 字串變數轉日期時間
             string dateTime = "2017-11-06 17:50:50.42";
-
             DateTime dt = Convert.ToDateTime(dateTime);
 
             TimeSpan start = new TimeSpan(17, 50, 0);

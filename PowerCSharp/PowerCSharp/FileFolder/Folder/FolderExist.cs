@@ -11,7 +11,7 @@ namespace PowerCSharp.FileFolder.Folder
 {
     public class RecursiveFileProcessor
     {
-        public static void Main(string[] args)
+        public static void Main3(string[] args)
         {
             foreach (string path in args)
             {

@@ -55,6 +55,7 @@
     <Compile Include="Database\BulkInsert.cs" />
     <Compile Include="Database\DataReader.cs" />
     <Compile Include="Database\ExecuteSQL.cs" />
+    <Compile Include="DateTime\DateTimeAdd.cs" />
     <Compile Include="DateTime\DatetimeFormat.cs" />
     <Compile Include="DateTime\DateTimeConvert.cs" />
     <Compile Include="DateTime\TimeBetween.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="FileFolder\Folder\FolderExist.cs" />
     <Compile Include="FileFolder\Log.cs" />
     <Compile Include="ForIteration\ForIteration.cs" />
+    <Compile Include="ForIteration\ParrallelFor.cs" />
     <Compile Include="IIS\ListWebSite.cs" />
     <Compile Include="IIS\ListWebSite2.cs" />
     <Compile Include="IIS\WebSite\WebSite.cs" />

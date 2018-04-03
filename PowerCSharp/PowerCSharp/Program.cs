@@ -22,7 +22,9 @@ namespace PowerCSharp
             //bTime.test();
 
             //ListWebSite.ListLocalIISWebSites();
-            ListWebSite2.ListWebSites(); 
+            //ListWebSite2.ListWebSites(); 
+
+            new ParrallelFor().test();
 
             Console.ReadLine();
         }

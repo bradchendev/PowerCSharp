@@ -18,6 +18,53 @@ namespace PowerCSharp.Database
 
     class MyDataReader
     {
+        public class ClientBasic
+        {
+            public int Sn { get; set; }
+            public string Fname { get; set; }
+            public string Lname { get; set; }
+            public DateTime birthday { get; set; }
+            public int Age { get; set; }
+        }
+
+        public ClientBasic getClientInfo(int Sn)
+        {
+            var client = new ClientBasic();
+
+            //var connString = ConfigurationManager.ConnectionStrings["MyDb1"].ConnectionString;
+            var connString = "server=SQL1;Integrated Security=SSPI;database=MyDb1";
+            SqlConnection connection = new SqlConnection(connString);
+            using (connection)
+            {
+                SqlCommand command = new SqlCommand(
+                  "select Fname, Lname, birthday, age from dbo.clients where sn = " + Sn,
+                  connection);
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        //Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
+                        //    reader.GetString(1));
+                        client.Fname = reader.GetString(0);
+                        client.Lname = reader.GetString(1);
+                        client.Age = reader.GetInt32(3);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No rows found.");
+                }
+                reader.Close();
+            }
+            return client;
+        }
+
+
+
         public SqlDataReader RetrieveRowsWithDataReader()
         {
             // using System.Data;
