@@ -70,12 +70,18 @@ namespace PowerCSharp
 
             // Group by 1個欄位
             var myCarsListGroupByYear = myCars.GroupBy(c => c.Year)
-                .Select(c => new { 
-                    year = c.Key, 
-                    yearCount = c.Count() 
+                .Select(c => new
+                {
+                    year = c.Key,
+                    yearCount = c.Count()
                 })
                 .OrderByDescending(order => order.year)
                 .ToList();
+
+            foreach (var car2 in myCarsListGroupByYear)
+            {
+                Console.WriteLine("Name: {0}, {1}", car2.year, car2.yearCount);
+            };
 
             // Group by 2個欄位
             var myCarsListGroupByYear2 = myCars.GroupBy(c => new { c.Year, c.Make })
@@ -85,6 +91,24 @@ namespace PowerCSharp
                     make = c.Key.Make,
                     makeCount = c.Count()
                 }).OrderBy(order => order.make).ThenByDescending(order => order.Year).ToList();
+
+
+
+            // Group by 取得Group by之後的List (myCarsListGroupByYear3裡面有3個List)
+            var myCarsListGroupByYear3 = myCars
+                .GroupBy(u => u.Year)
+                .Select(grp => grp.ToList())
+                .ToList();
+
+            foreach (var cars in myCarsListGroupByYear3)
+            {
+                foreach (var car in cars)
+                {
+                    Console.WriteLine("Name: {0}, {1}", car.Name, car.Year);
+                }
+            }
+
+
 
         }
 
