@@ -4,12 +4,75 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PowerCSharp.String
 {
     class String
     {
+        public void removeSpace()
+        {
+            // https://docs.microsoft.com/en-us/dotnet/api/system.string.trim?redirectedfrom=MSDN&view=netframework-4.7.2#System_String_Trim
+            //String.Trim() returns a string which equals the input string with all white-spaces trimmed from start and end:
+            string a = "   A String   ".Trim();
+                 //-> "A String"
+
+            //String.TrimStart() returns a string with white-spaces trimmed from the start:
+            string b = "   A String   ".TrimStart();
+                //-> "A String   "
+
+            //String.TrimEnd() returns a string with white-spaces trimmed from the end:
+            string c = "   A String   ".TrimEnd();
+                //-> "   A String"
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            Console.WriteLine(c);
+        }
+
+        // 使用substring (參數是 zero-base)
+        // substring只用一個參數，就是讀取到字尾
+        public void Left_right()
+        {
+            // https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?redirectedfrom=MSDN&view=netframework-4.7.2#System_String_Substring_System_Int32_System_Int32_
+
+            string value = "This is a string.";
+            int startIndex = 5;
+            int length = 2;
+            string substring = value.Substring(startIndex, length);
+            Console.WriteLine(substring);
+            // The example displays the following output:
+            //       is
+
+
+            // 讀取到字尾
+            string substring2 = value.Substring(startIndex);
+            Console.WriteLine(substring2);
+            //       is a string.
+        }
+
+        /// <summary>
+        /// 透過fname與lname組成userid，只保留英文字
+        /// </summary>
+        /// <param name="fname"></param>
+        /// <param name="lname"></param>
+        /// <returns></returns>
+        private string ComposeUserId(string fname, string lname)
+        {
+            string uid = "";
+            string uidTmp = string.Format("{0}{1}", fname.Trim().ToLower(), lname.Trim().ToLower());
+            uidTmp = uidTmp.Substring(0, 40);
+            foreach (char c in uidTmp)
+            {
+                bool isAlphaBet = Regex.IsMatch(c.ToString(), "[a-z]", RegexOptions.IgnoreCase);
+                if (isAlphaBet)
+                {
+                    uid += c;
+                }
+            }
+            return uid;
+        }
+
         public void replaceDoubleQuotes()
         {
             string str = "it is a \"text\"";
@@ -82,6 +145,9 @@ namespace PowerCSharp.String
 
         }
 
+        /// <summary>
+        /// Guid
+        /// </summary>
         public void getSpecialString()
         {
             //byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());

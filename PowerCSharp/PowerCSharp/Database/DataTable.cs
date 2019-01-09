@@ -12,25 +12,25 @@ namespace PowerCSharp.Database
     {
         private static void test()
         {
-            DataTable dataTable = new DataTable();
+            //DataTable dataTable = new DataTable();
 
-            SqlConnection conn = new SqlConnection(GetConnectionString());
-            var query = "select [Id], [ProductName] from [dbo].[Orders] where [Id] between 4500000 and 5000000";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            conn.Open();
+            //SqlConnection conn = new SqlConnection(GetConnectionString());
+            //var query = "select [Id], [ProductName] from [dbo].[Orders] where [Id] between 4500000 and 5000000";
+            //SqlCommand cmd = new SqlCommand(query, conn);
+            //conn.Open();
 
-            // create data adapter
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            // this will query your database and return the result to your datatable
-            da.Fill(dataTable);
-            conn.Close();
-            da.Dispose();
+            //// create data adapter
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //// this will query your database and return the result to your datatable
+            //da.Fill(dataTable);
+            //conn.Close();
+            //da.Dispose();
 
-            foreach (DataRow od in dataTable.Rows)
-            {
+            //foreach (DataRow od in dataTable.Rows)
+            //{
 
-                Console.WriteLine(od["ProductName"].ToString());
-            }
+            //    Console.WriteLine(od["ProductName"].ToString());
+            //}
 
         }
 

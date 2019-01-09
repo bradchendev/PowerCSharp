@@ -10,6 +10,12 @@ namespace PowerCSharp
     {
         static void Main(string[] args)
         {
+
+            Console.WriteLine(Guid.NewGuid().ToString());
+            Console.WriteLine(Guid.NewGuid().ToString("N"));
+            Console.WriteLine(Guid.NewGuid().ToString("N"));
+            Console.WriteLine(Guid.NewGuid().ToString("N"));
+
             //var myCars = new Car().getList();
             //foreach (var item in myCars)
             //{
@@ -24,7 +30,7 @@ namespace PowerCSharp
             //ListWebSite.ListLocalIISWebSites();
             //ListWebSite2.ListWebSites(); 
 
-            new ParrallelFor().test();
+            //new ParrallelFor().test();
 
             Console.ReadLine();
         }

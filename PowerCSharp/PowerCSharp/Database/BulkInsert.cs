@@ -51,36 +51,36 @@ namespace PowerCSharp.Database
             };
 
             //using System.Data.SqlClient;
-            using (SqlConnection destinationConnection = new SqlConnection(GetConnectionString()))
-            {
-                destinationConnection.Open();
+            //using (SqlConnection destinationConnection = new SqlConnection(GetConnectionString()))
+            //{
+            //    destinationConnection.Open();
 
-                using (SqlBulkCopy bulkCopy =
-                           new SqlBulkCopy(destinationConnection))
-                {
-                    bulkCopy.DestinationTableName = "dbo.DalServiceStatus";
+            //    using (SqlBulkCopy bulkCopy =
+            //               new SqlBulkCopy(destinationConnection))
+            //    {
+            //        bulkCopy.DestinationTableName = "dbo.DalServiceStatus";
 
-                    bulkCopy.ColumnMappings.Add("DalServerSn", "DalServerSn");
-                    bulkCopy.ColumnMappings.Add("WebSiteId", "WebSiteId");
-                    bulkCopy.ColumnMappings.Add("WebSiteName", "WebSiteName");
-                    bulkCopy.ColumnMappings.Add("WebSiteState", "WebSiteState");
-                    bulkCopy.ColumnMappings.Add("AppFolder", "AppFolder");
-                    bulkCopy.ColumnMappings.Add("AppFolderLastM", "AppFolderLastM");
+            //        bulkCopy.ColumnMappings.Add("DalServerSn", "DalServerSn");
+            //        bulkCopy.ColumnMappings.Add("WebSiteId", "WebSiteId");
+            //        bulkCopy.ColumnMappings.Add("WebSiteName", "WebSiteName");
+            //        bulkCopy.ColumnMappings.Add("WebSiteState", "WebSiteState");
+            //        bulkCopy.ColumnMappings.Add("AppFolder", "AppFolder");
+            //        bulkCopy.ColumnMappings.Add("AppFolderLastM", "AppFolderLastM");
 
-                    try
-                    {
-                        var dataTable = ToDataTable<ServiceStatusModelItem>(MyList);
+            //        try
+            //        {
+            //            var dataTable = ToDataTable<ServiceStatusModelItem>(MyList);
 
-                        // Write from the source to the destination.
-                        bulkCopy.WriteToServer(dataTable);
-                    }
-                    catch (Exception ex)
-                    {
-                        //Console.WriteLine(ex.Message);
-                        throw;
-                    }
-                }
-            }
+            //            // Write from the source to the destination.
+            //            bulkCopy.WriteToServer(dataTable);
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            //Console.WriteLine(ex.Message);
+            //            throw;
+            //        }
+            //    }
+            //}
 
         }
 
@@ -96,32 +96,32 @@ namespace PowerCSharp.Database
         // 將List資料自動轉成DataTable
         //  https://stackoverflow.com/questions/18100783/how-to-convert-a-list-into-data-table
         // using System.Data;, using System.Reflection;
-        public static DataTable ToDataTable<T>(List<T> items)
-        {
-            DataTable dataTable = new DataTable(typeof(T).Name);
+        //public static DataTable ToDataTable<T>(List<T> items)
+        //{
+        //    DataTable dataTable = new DataTable(typeof(T).Name);
 
-            //Get all the properties
-            PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
-            foreach (PropertyInfo prop in Props)
-            {
-                //Defining type of data column gives proper data table 
-                var type = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(prop.PropertyType) : prop.PropertyType);
-                //Setting column names as Property names
-                dataTable.Columns.Add(prop.Name, type);
-            }
-            foreach (T item in items)
-            {
-                var values = new object[Props.Length];
-                for (int i = 0; i < Props.Length; i++)
-                {
-                    //inserting property values to datatable rows
-                    values[i] = Props[i].GetValue(item, null);
-                }
-                dataTable.Rows.Add(values);
-            }
-            //put a breakpoint here and check datatable
-            return dataTable;
-        }
+        //    //Get all the properties
+        //    PropertyInfo[] Props = typeof(T).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+        //    foreach (PropertyInfo prop in Props)
+        //    {
+        //        //Defining type of data column gives proper data table 
+        //        var type = (prop.PropertyType.IsGenericType && prop.PropertyType.GetGenericTypeDefinition() == typeof(Nullable<>) ? Nullable.GetUnderlyingType(prop.PropertyType) : prop.PropertyType);
+        //        //Setting column names as Property names
+        //        dataTable.Columns.Add(prop.Name, type);
+        //    }
+        //    foreach (T item in items)
+        //    {
+        //        var values = new object[Props.Length];
+        //        for (int i = 0; i < Props.Length; i++)
+        //        {
+        //            //inserting property values to datatable rows
+        //            values[i] = Props[i].GetValue(item, null);
+        //        }
+        //        dataTable.Rows.Add(values);
+        //    }
+        //    //put a breakpoint here and check datatable
+        //    return dataTable;
+        //}
 
         public class ServiceStatusModelItem
         {
