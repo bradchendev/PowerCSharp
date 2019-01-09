@@ -34,9 +34,8 @@ namespace PowerCSharp.WebCrawler
             //var document = parser.Parse(html);
             #endregion
 
-            #region query
 
-            #region 去除指定的tag region
+            #region query and 去除指定的tag region
             // 去除指定的tag region
             // var blueListItemsCssSelector2 = document2.QuerySelector("div.wpcf7");
             // 選取或取得指定的tag region，也就是這個<div role="form" class="wpcf7">
@@ -46,6 +45,7 @@ namespace PowerCSharp.WebCrawler
             //var s = document2.DocumentElement.OuterHtml;
             #endregion
 
+            #region query and filter 轉成list
             //var blueListItemsCssSelector = document.QuerySelectorAll("div.event_time");
             var blueListItemsCssSelector = document.QuerySelectorAll("a");
             var blueListItemsLinq = blueListItemsCssSelector.Where(m => m.OuterHtml.Contains("event_detail.php")).Take(4);
