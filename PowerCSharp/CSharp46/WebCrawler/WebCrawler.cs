@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 using AngleSharp.Html.Parser;
 
+// 如果要安裝舊版本 AngleSharp 可以用 套件管理器主控台  Install-Package AngleSharp -Version 0.9.11
+// https://github.com/AngleSharp/AngleSharp/blob/master/doc/index.md
+// https://www.nuget.org/packages/AngleSharp/
+
 namespace PowerCSharp.WebCrawler
 {
     class WebCrawler
