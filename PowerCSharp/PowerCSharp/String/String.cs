@@ -30,6 +30,18 @@ namespace PowerCSharp.String
             Console.WriteLine(c);
         }
 
+       public void FindStringLocation()
+       {
+          string str = "animal";
+          string toFind = "n";
+          int index = str.IndexOf("n");
+          Console.WriteLine("Found '{0}' in '{1}' at position {2}",
+                            toFind, str, index);
+           // The example displays the following output:
+           //        Found 'n' in 'animal' at position 1
+
+       }
+
         // 使用substring (參數是 zero-base)
         // substring只用一個參數，就是讀取到字尾
         public void Left_right()
