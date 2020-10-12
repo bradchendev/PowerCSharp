@@ -111,6 +111,39 @@ namespace PowerCSharp.String
             // output is 'aaaa','bbbb'
         }
 
+
+        public void splitGetlastPart()
+        {
+            // method 1
+            string myString = "abc-def-gef";
+            str = myString.Split('-').Last();
+
+            // method 2
+            string s = "My. name. is Bond._James Bond!";
+            int idx = s.LastIndexOf('.');
+
+            if (idx != -1)
+            {
+                Console.WriteLine(s.Substring(0, idx)); // "My. name. is Bond"
+                Console.WriteLine(s.Substring(idx + 1)); // "_James Bond!"
+            }
+
+        }
+
+        // https://docs.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split
+        public void splitstringSample()
+        {
+
+            string phrase = "The quick brown fox jumps over the lazy dog.";
+            string[] words = phrase.Split(' ');
+
+            foreach (var word in words)
+            {
+                System.Console.WriteLine($"<{word}>");
+            }
+
+        }
+
         public void splitString()
         {
             string userDomainName = @"CONTOSO\bradchen";
